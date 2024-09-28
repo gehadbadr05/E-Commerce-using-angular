@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1 class="h1">{{Storename|uppercase}}</h1>
+  <img [src]="storeLogo" style="width: 50%;height: 20%; margin-left: 400px; "><br><br>
+
+  
+  <h3 *ngIf="hasOffer">This is our Discount: {{Discount|percent}}</h3>
+  <h2>Product List</h2>
+  <div class="c1" *ngFor="let product of ProductList ">
+    {{product.ID}} - {{product.Name}}
+  </div>
+
+  <input type="text" id="btn">
+  <button (click)="getId()">getById</button><br><br>
+
+   <button (click)="showTable()">Show Product Details</button>
+  <table *ngIf="table">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Image</th>
+    </tr>
+    <tr *ngFor="let product of ProductList">
+      <td>{{product?.ID}}</td>
+      <td>{{product?.Name}}</td>
+      <td>{{product?.Quantity}}</td>
+      <td>{{product?.Price| currency }}</td>
+      <td><img [src]="product?.Img"></td>
+    </tr>
+  </table>
+  <h2>Category List:</h2>
+<div *ngIf="CategoryList.length === 0">No categories available.</div>
+<select>
+  <option *ngFor="let category of CategoryList">{{ category?.Name }}</option>
+</select> 
+
+<h2>Client Name: {{ ClientName }}</h2>
+<input [(ngModel)]="ClientName" placeholder="gehad badr">
+<button (click)="Buy()">Buy</button>
+<div *ngIf="IsPurchased; else purchaseMessage" style="font-size: 30px; margin-left: 330px; color: crimson;">
+  Thanks for Purchasing From our Store, {{ ClientName }}!
+</div>
+<button routerLink="/products/with-discount">Products with discount</button> &nbsp;
+<button routerLink="/products/without-discount">Products without discount</button>
+
+<ng-template #purchaseMessage>
+  <div>
+    Please click the "Buy" button to make a purchase.
+  </div>
+</ng-template>
+</body>
+
+</html>
+
+<router-outlet></router-outlet>

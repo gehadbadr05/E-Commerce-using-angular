@@ -1,0 +1,99 @@
+.h1 {
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+  }
+  
+  #logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    font-size: 18px;
+    color: #ff0000;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    
+  }
+  
+  table {
+    width: 70%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    background-color: #fde6e6;
+  }
+  
+  th {
+    background-color: #ffb6b6;
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #fff;
+  }
+  
+  tr:hover {
+    background-color: #ffeded;
+  }
+  
+  td.image {
+    width: 120px;
+  }
+  
+  td.image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  select {
+    padding: 8px;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  div.purchase-message {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  div.purchase-message span {
+    color: #4caf50;
+  }
+  .c1{
+    border: 1px solid black;
+    font-size: 30px;
+    width: 25%;
+    height: 50px;
+  }

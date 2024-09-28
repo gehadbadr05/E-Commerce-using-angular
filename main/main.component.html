@@ -1,0 +1,69 @@
+<div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner" >
+      <div class="carousel-item active">
+        <img src="../../assets/iii.jpg"  class="d-block w-100" alt="..." >
+      </div>
+      <div class="carousel-item">
+        <img src="../../assets/logo.jpg"  class="d-block w-100" alt="..." >
+      </div>
+      <div class="carousel-item">
+        <img src="../../assets/ii.jpg"  class="d-block w-100" alt="..."  >
+      </div>
+      
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  
+  <h2 style="text-align: center; padding: 10px;"> Register Form</h2>
+  <div class="container">
+  <form  [formGroup]="registerationForm">
+    {{registerationForm.value |json}}
+    <br>
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"  [class.is-invalid]="userName?.invalid && userName?.touched"  class="form-control" formControlName="userName" >
+    <div *ngIf="userName?.invalid && userName?.touched">
+      <small class="text-danger" *ngIf="userName?.errors?.['required']">User Name is Required</small>
+      <small class="text-danger" *ngIf="userName?.errors?.['minlength']">Min Length must be 5</small>
+   </div>
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [class.is-invalid]="email?.invalid && email?.touched" class="form-control" formControlName="email">
+    <small class="text-danger" *ngIf="email?.errors?.['required']">Email is Required</small>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"  [class.is-invalid]="password?.errors?.['misMatch']"class="form-control" formControlName="password" >
+    <small class="text-danger" *ngIf="password?.errors?.['misMatch']">Password is Required</small>
+  </div>
+
+  <div class="form-group">
+    <label>Confirm Password</label>
+    <input type="password"  id="confirm-password" name="confirm-password" formControlName="confirmPassword" class="form-control">
+   
+</div>
+    <label for="where-hear">Where did you hear about us?</label>
+    <select id="where-hear" name="where-hear">
+      <option value="facebook">Facebook</option>
+      <option value="twitter">Twitter</option>
+      <option value="google">Google</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary">Register</button><br><br>
+    <button class="btn btn-success float-right" (click)="getData()" style=" float: left; width: 100px;">Get Data</button>
+  </form>
+  </div>

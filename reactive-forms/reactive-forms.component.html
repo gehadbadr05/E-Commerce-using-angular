@@ -1,0 +1,43 @@
+<!-- <h2 style="text-align: center; padding: 10px;"> Register Form</h2>
+ <form #userForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+    {{userModel|json}}
+   <br>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"  required [class.is-invalid]="name.invalid && name.touched" [(ngModel)]="userModel.name"  pattern="/^[a-zA-Z]+$/" name="txtName"  #name="ngModel">
+    <div *ngIf="name.errors && name.touched">
+      <small class="text-danger" *ngIf="name.invalid && name.touched">UserName is required</small><br>
+      <small class="text-danger" *ngIf="name.errors['pattern']">Username must be small and capital character</small>
+    </div> 
+
+     <small class="text-danger" *ngIf="name.invalid && name.touched">Password is required</small> 
+ 
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"  required [class.is-invalid]="name.invalid && name.touched"[(ngModel)]="userModel.email"  pattern="^([a-zA-Z0-9_\.-]+)@(gmail|yahoo)(.com|.eg)$" name="txtEmail"  #email="ngModel" >
+    <div *ngIf="email.errors && email.touched">
+      <small class="text-danger" *ngIf="email.invalid && email.touched">Email is required</small><br>
+      <small class="text-danger" *ngIf="email.errors['pattern']"> Email input must contains @ and </small>
+    </div>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required [class.is-invalid]="name.invalid && name.touched" [(ngModel)]="userModel.password" name="txtPassword"  #password="ngModel">
+    <small class="text-danger" *ngIf="password.invalid && password.touched">Password is required</small>
+
+    <label for="confirm-password">Confirm Password:</label>
+    <input type="password" id="confirm-password" name="confirm-password" required [class.is-invalid]="name.invalid && name.touched" [(ngModel)]="userModel.password" name="txtPassword"  #confirm="ngModel" >
+    <small class="text-danger" *ngIf="password.invalid && password.touched">Password is required</small>
+    <label for="where-hear">Where did you hear about us?</label>
+    <select id="where-hear" name="where-hear">
+      <option value="facebook">Facebook</option>
+      <option value="twitter">Twitter</option>
+      <option value="google">Google</option>
+    </select>
+  
+    <button type="submit" id="register-button">Register</button>
+
+
+
+     <input type="submit" [disabled]="userForm.form.invalid" class="btn btn-primary" value="Register">  
+      <button type="submit" [ngClass]="{ 'btn-disabled': userForm.invalid, 'btn-valid': userForm.valid }" [disabled]="userForm.form.invalid">
+      Register
+    </button> 
+   </form>  -->
